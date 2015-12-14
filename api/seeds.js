@@ -1,6 +1,4 @@
 var mongoose = require('mongoose');
-
-
 var User = require('./models/user');
 
 var users = [
@@ -18,7 +16,7 @@ var users = [
   User.remove({}, function(err) {
     if (err) console.log(err);
 
-      Crawl.create(crawls, function(err, crawls) {
+      User.create(users, function(err, users) {
 
         if (err) {
           console.log(err);

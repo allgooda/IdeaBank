@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 
 var index = function(req, res, next) {
     User.find({}, function(error, users) {
-      console.log(users);
+      res.json(users);
     });
 };
 
