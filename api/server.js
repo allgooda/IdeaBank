@@ -39,7 +39,6 @@ app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api', apiRoutes);
 
 app.get('/api', function(req, res, next) {
   var baseUri = `${req.protocol}:\/\/${req.get('host')}\/api`;
@@ -51,36 +50,79 @@ app.get('/api', function(req, res, next) {
     ]
   });
 });
-//LEFT OFF HERE
 
 
-// catch 404 and forward to error handler
+// Validation: check for correctly formed requests (content type).
+app.use(['/api/users', '/api/token'], function(req, res, next) {
+  if (req.get('Content-Type') !== 'application/json') {
+    errorHandler(
+      400,
+      'Request body must be JSON. Set your headers; see ' +
+      'http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17',
+      req, res
+    );
+  } else {
+    next();
+  }
+});
+
+// Parsing and validation (replies with good errors for JSON parsing).
+app.use('/api', bodyParser.json());
+
+// User resource route (POST /users)
+require('./routes/userRoute')(app, errorHandler);
+
+// Token resource route (POST /token)
+require('./routes/tokenRoute')(app, errorHandler);
+
+// Authorized resource route (GET /me)
+require('./routes/meRoute')(app, errorHandler);
+
+app.use('/api', apiRoutes);
+
+// Catches all 404 routes.
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
+// Error-handling layer.
 app.use(function(err, req, res, next) {
+  // In development, the error handler will print stacktrace.
+  err = (app.get('env') === 'development') ? err : {};
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: {}
+    error: err
   });
 });
 
+function debugReq(req, res, next) {
+  debug('params:', req.params);
+  debug('query:',  req.query);
+  debug('body:',   req.body);
+  next();
+}
+
+function errorHandler(code, message, req, res) {
+  var title = '';
+  var responseJson = {};
+
+  res.status(code);
+  switch(code) {
+    case 400: title = '400 Bad Request';  break;
+    case 401: title = '401 Unauthorized'; break;
+    case 403: title = '403 Forbidden';    break;
+    case 404: title = '404 Not Found';    break;
+    case 422: title = '422 Unprocessable Entity';
+  }
+
+  responseJson.response = title;
+  if (message && message.length > 0) responseJson.message = message;
+
+  res.json(responseJson);
+}
 
 module.exports = app;
+
