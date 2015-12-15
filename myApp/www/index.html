@@ -29,7 +29,9 @@
         <fieldset class="pure-group center">
           <input type="email" name="email" class="email" placeholder="user@domain.com">
           <input type="password" name="password" class="password" placeholder="secretpassword">
-          <button type="submit" class="pure-button pure-button-primary">Submit</button>
+          <button type="submit" ng-hide="vm.auth.isLoggedIn" ng-click="vm.logInUser()" class="btn btn-primary">Login</button>
+          <button type="button" ng-show="vm.auth.isLoggedIn" ng-click="vm.auth.logOut()" class="btn btn-danger">Log Out</button>
+        </fieldset>
         </fieldset>
       </form>
 
@@ -40,8 +42,9 @@
 
   <script src="/js/app/angular.module.js"></script>
   <script src="/js/app/main.controller.js"></script>
+  <script src="/js/app/token.service.js"></script>
   <script src="/js/app/user.dataservice.js"></script>
-
+  <script src="/js/app/auth.service.js"></script>
   <script type="text/javascript">
 
 

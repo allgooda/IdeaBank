@@ -13,7 +13,9 @@
       email:    "adam@adam.com",
       password: "12345",
       interval: 60000,
-      create:   create
+      clear: clear,
+      create:   create,
+      currentUserData: currentUserData
     };
 
     return user;
@@ -31,6 +33,24 @@
           password: user.password,
           interval: user.interval
         })
+      });
+    }
+
+    function clear() {
+      $log.debug("Clearing user.");
+
+      user.email    = "";
+      user.name     = "";
+      user.password = "";
+      user.interval     = 0;
+    }
+
+    function currentUserData() {
+      $log.debug("Retrieving current user data.");
+
+      return $http({
+        url:     "http://localhost:3000/api/me",
+        method:  "GET"
       });
     }
   }
