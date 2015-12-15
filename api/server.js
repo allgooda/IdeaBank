@@ -13,6 +13,8 @@ var env      = require('./config/environment'),
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 var app = express();
 
+app.set('view engine', 'jade');
+
 app.set('title', env.TITLE);
 app.set('safe-title', env.SAFE_TITLE);
 app.set('secret-key', env.SECRET_KEY);

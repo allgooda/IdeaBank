@@ -12,40 +12,42 @@
     <script src="js/app.js"></script>
     <script src="js/main.controller.js"></script>
   </head>
-  <body ng-app="app" ng-controller="Main as main">
+  <body ng-app="ideabank" ng-controller="MainController as vm">
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
+     <form id="user" class="pure-form center" ng-submit="vm.createUser()">
+        <fieldset class="pure-group center">
+          <input type="text"     ng-model="vm.user.name"     name="name" class="name" placeholder="Terry Winters">
+          <input type="email"    ng-model="vm.user.email"    name="email" class="email" placeholder="user@domain.com">
+          <input ng-model="vm.user.interval"    name="interval" class="email" placeholder="1 day...">
+          <input type="password" ng-model="vm.user.password" name="password" class="password" placeholder="secretpassword">
+          <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </fieldset>
+      </form>
 
-    <br><br>
-    <div class="item item-input-inset">
-      <label class="item item-input">
-        <input type="text" ng-model="main.email" placeholder="email">
-      </label>
-      <br>
-    </div>
+      <h4>Log In User</h4>
+      <form id="token" class="pure-form center">
+        <fieldset class="pure-group center">
+          <input type="email" name="email" class="email" placeholder="user@domain.com">
+          <input type="password" name="password" class="password" placeholder="secretpassword">
+          <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </fieldset>
+      </form>
 
-    <div class="item item-input-inset">
-      <label class="item item-input">
-        <input type="password" ng-model="main.password" placeholder="password">
-      </label>
-    <button class="button button-small" ng-click="main.register()">Register</button>
-    <button ng-click="main.login()">Login</button>
-    <button ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
-    </div>
+      <pre id="success">{{ vm.successMessage }}</pre>
+      <pre id="failure">{{ vm.failureMessage }}</pre>
+    </main>
+  </div> <!-- div.container -->
 
-    <br>
-    <br>
+  <script src="/js/app/angular.module.js"></script>
+  <script src="/js/app/main.controller.js"></script>
+  <script src="/js/app/user.dataservice.js"></script>
 
-    <button ng-click="main.getQuote()">get quote</button>
-    <br><br>
-    {{main.message}}
-    <br><br><br>
+  <script type="text/javascript">
 
+
+
+  <!-- App scripts -->
+
+  </script>
   </body>
 </html>

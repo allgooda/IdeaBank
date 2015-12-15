@@ -8,12 +8,11 @@ var jwt          = require("jsonwebtoken");
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('jfdlskjfsjlk');
-});
+
 
 router.get('/users', usersController.index);
-router.post('/users', usersController.create);
+// router.post('/users', usersController.create);
+router.get('/users/:id', usersController.show);
 
 router.get('/ideas', ideasController.index);
 router.post('/ideas', ideasController.create)

@@ -38,8 +38,7 @@ module.exports = function(app, errorHandler) {
       !req.body.name     ||
       !req.body.email    ||
       !req.body.password ||
-      !req.body.interval ||
-      !req.body.dob
+      !req.body.interval
     ) {
       errorHandler(
         422,
