@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.controller.js"></script>
+  </head>
+  <body ng-app="app" ng-controller="Main as main">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">Ionic Blank Starter</h1>
+      </ion-header-bar>
+      <ion-content>
+      </ion-content>
+    </ion-pane>
+
+    <br><br>
+    <div class="item item-input-inset">
+      <label class="item item-input">
+        <input type="text" ng-model="main.email" placeholder="email">
+      </label>
+      <br>
+    </div>
+
+    <div class="item item-input-inset">
+      <label class="item item-input">
+        <input type="password" ng-model="main.password" placeholder="password">
+      </label>
+    <button class="button button-small" ng-click="main.register()">Register</button>
+    <button ng-click="main.login()">Login</button>
+    <button ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
+    </div>
+
+    <br>
+    <br>
+
+    <button ng-click="main.getQuote()">get quote</button>
+    <br><br>
+    {{main.message}}
+    <br><br><br>
+
+  </body>
+</html>
