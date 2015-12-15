@@ -1,6 +1,5 @@
 var express      = require('express');
 var path         = require('path');
-var morgan       = require("morgan");
 var jwt          = require("jsonwebtoken");
 var favicon      = require('serve-favicon');
 var logger       = require('morgan');
@@ -12,22 +11,48 @@ var mongoose     = require('./config/database');
 var debug        = require('debug')('app:http');
 var app          = express();
 
+var env = require('./config/environment');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.set('title', env.TITLE);
+app.set('safe-title', env.SAFE_TITLE);
+app.set('secret-key', env.SECRET_KEY);
+app.locals.title = app.get('title');
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(morgan("dev"));
+
 app.use(function(req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
-    next();
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+
+  if ('OPTIONS' == req.method) {
+  res.send(200);
+  } else {
+  next();
+  }
 });
+
+app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', apiRoutes);
+
+app.get('/api', function(req, res, next) {
+  var baseUri = `${req.protocol}:\/\/${req.get('host')}\/api`;
+  res.json({
+    token_url: `${baseUri}/token`,
+    user_urls: [
+      `${baseUri}/users`,
+      `${baseUri}/me`
+    ]
+  });
+});
+//LEFT OFF HERE
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -36,10 +61,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
 
-// development error handler
-// will print stacktrace
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
