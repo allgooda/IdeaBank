@@ -30,7 +30,7 @@ function userService($http, API, auth) {
 }
 
 // We won't touch anything in here
-function MainCtrl(user, auth) {
+function MainCtrl($http, user, auth) {
   var self = this;
 
   function handleRequest(res) {
