@@ -8,6 +8,7 @@ var userSchema = new mongoose.Schema({
   email: String,
   password: String,
   interval: Number,
+  token: String,
   ideas: [ideaSchema]
 });
 
