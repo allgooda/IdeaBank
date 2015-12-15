@@ -1,45 +1,57 @@
 var express      = require('express');
 var path         = require('path');
-var jwt          = require("jsonwebtoken");
 var favicon      = require('serve-favicon');
 var logger       = require('morgan');
-var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
-var mongoose     = require('mongoose');
-var apiRoutes    = require('./routes/api');
-var mongoose     = require('./config/database');
 var debug        = require('debug')('app:http');
-var app          = express();
+var cookieParser = require('cookie-parser');
 
-var env = require('./config/environment');
+var env      = require('./config/environment'),
+    mongoose = require('./config/database'),
+    routes   = require('./routes/api');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+var app = express();
+
 app.set('title', env.TITLE);
 app.set('safe-title', env.SAFE_TITLE);
 app.set('secret-key', env.SECRET_KEY);
+
+
 app.locals.title = app.get('title');
 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin',  '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
 
   if ('OPTIONS' == req.method) {
-  res.send(200);
+    res.send(200);
   } else {
-  next();
+    next();
   }
 });
 
+// Logging layer.
 app.use(logger('dev'));
-app.use(cookieParser());
+
+// Helper layer (parses the requests, and adds further data).
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cookieParser('notsosecretnowareyou'));
+
+// Routing layers: favicon, static assets, dynamic routes, or 404…
+
+// Routes to static assets. Uncomment below if you have a favicon.
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Useful for debugging the state of requests.
+app.use(debugReq);
 
+// Defines all of our "dynamic" routes.
 app.get('/api', function(req, res, next) {
   var baseUri = `${req.protocol}:\/\/${req.get('host')}\/api`;
   res.json({
@@ -50,7 +62,6 @@ app.get('/api', function(req, res, next) {
     ]
   });
 });
-
 
 // Validation: check for correctly formed requests (content type).
 app.use(['/api/users', '/api/token'], function(req, res, next) {
@@ -78,7 +89,7 @@ require('./routes/tokenRoute')(app, errorHandler);
 // Authorized resource route (GET /me)
 require('./routes/meRoute')(app, errorHandler);
 
-app.use('/api', apiRoutes);
+app.use('/', routes);
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {
@@ -125,4 +136,3 @@ function errorHandler(code, message, req, res) {
 }
 
 module.exports = app;
-
