@@ -16,6 +16,8 @@ var create = function(req, res, next) {
     res.json(user);
    });
 }
+
+
 module.exports = {
   index:index,
   create:create
