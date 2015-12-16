@@ -2,6 +2,10 @@ body {
   background: url(https://moodle.unitec.ac.nz/pluginfile.php/281368/mod_page/content/5/topography1.jpeg);
 }
 
+nav {
+  background: black;
+}
+
 .row {
   background: grey;
   margin-top: 100px;
