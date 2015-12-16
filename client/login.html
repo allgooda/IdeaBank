@@ -9,11 +9,11 @@
 </form>
 
 <h4>Log In User</h4>
-<form id="token" class="pure-form center">
+<form id="token" class="pure-form center" ng-submit="vm.logInUser()">
   <fieldset class="pure-group center">
-    <input type="email" name="email" class="email" placeholder="user@domain.com">
-    <input type="password" name="password" class="password" placeholder="secretpassword">
-    <button type="submit" ng-hide="vm.auth.isLoggedIn" ng-click="vm.logInUser()" class="btn btn-primary">Login</button>
+    <input type="email" name="email" class="email" placeholder="user@domain.com" ng-model="vm.auth.email">
+    <input type="password" name="password" class="password" placeholder="secretpassword" ng-model="vm.auth.password">
+    <button type="submit" ng-hide="vm.auth.isLoggedIn" class="btn btn-primary">Login</button>
     <button type="button" ng-show="vm.auth.isLoggedIn" ng-click="vm.auth.logOut()" class="btn btn-danger">Log Out</button>
   </fieldset>
   </fieldset>

@@ -9,10 +9,10 @@
 
   function userDataService($log, $http) {
     var user = {
-      name:     "adam",
-      email:    "adam@adam.com",
-      password: "12345",
-      interval: 60000,
+      name:     "",
+      email:    "",
+      password: "",
+      interval: 0,
       clear: clear,
       create:   create,
       currentUserData: currentUserData
@@ -42,7 +42,7 @@
       user.email    = "";
       user.name     = "";
       user.password = "";
-      user.interval     = 0;
+      user.interval = 0;
     }
 
     function currentUserData() {
