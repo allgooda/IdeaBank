@@ -34,6 +34,7 @@ module.exports = function(app, errorHandler) {
   // *** VALIDATIONS ***
 
   function checkForToken(req, res, next) {
+    console.log(req.body)
     var authorizationHeader = req.get('Authorization'),
         method,
         token;
