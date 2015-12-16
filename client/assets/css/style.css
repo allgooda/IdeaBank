@@ -1,0 +1,18 @@
+body {
+  background: url(https://moodle.unitec.ac.nz/pluginfile.php/281368/mod_page/content/5/topography1.jpeg);
+}
+
+.row {
+  background: grey;
+  margin-top: 100px;
+  height: 250px;
+}
+
+#box {
+  margin: 0px auto;
+  width: 300px;
+}
+
+#idea {
+  text-align: center;
+}
