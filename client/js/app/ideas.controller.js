@@ -17,7 +17,7 @@
 
     function submitIdea() {
       $http
-        .post("http://localhost3000/ideas", vm.newIdea)
+        .post("http://localhost:3000/ideas", vm.newIdea)
         .then(function (response) {
           vm.ideas.push(response.data);
           vm.newIdea = {};

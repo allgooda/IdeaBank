@@ -1,18 +1,22 @@
 var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
-var ideaSchema = require("../models/idea");
 mongoose.Promise = Promise;
 
+var ideaSchema = new mongoose.Schema({
+  content: String,
+  date: {type: Date, default: Date.now}
+});
+
 var userSchema = new mongoose.Schema({
-  name:   String,
-  email: String,
-  password: String,
+  name:     String,
+  email:    String,
   interval: Number,
-  ideas: [ideaSchema]
+  ideas:   [ideaSchema]
 });
 
 userSchema.plugin(require('mongoose-bcrypt'));
+
 var User = mongoose.model('User', userSchema);
 
 module.exports = User;

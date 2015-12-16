@@ -9,11 +9,15 @@ var index = function(req, res, next) {
 }
 
 var create = function(req, res, next) {
-  Idea.create(req.body, function(err, idea) {
+  console.log("Adding idea to user:", req.user, req.body);
+
+  req.user.ideas.push(req.body);
+
+  req.user.save(function(err, user) {
     if(err) {
       res.send(err);
     }
-    res.json(idea);
+    res.json(user);
   });
 }
 

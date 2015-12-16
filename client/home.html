@@ -3,7 +3,7 @@
 <form ng-controller="IdeasController as vm" ng-submit="vm.submitIdea()">
   <div class="row">
     <div class="input-field col s6" id="box">
-      <input value="Idea..." id="idea" type="text" class="validate">
+      <input value="Idea..." id="idea" type="text" class="validate" ng-model='vm.newIdea.content'>
       <input type="submit">
     </div>
   </div>
