@@ -31,7 +31,7 @@ var emailUser = function(ideas) {
   });
 }
 
-var myVar = setInterval(function() { sendEmails() }, 10000);
+// var myVar = setInterval(function() { sendEmails() }, 10000);
 
 var sendEmails = function(req, res, next) {
   User.find({}, function(error, users) {
@@ -47,6 +47,7 @@ var sendEmails = function(req, res, next) {
         }
         console.log(seconds);
       });
+
       for (var i = 0; i < sendRetire.length; i++) {
         user.ideas.shift();
       }

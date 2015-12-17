@@ -8,6 +8,7 @@ var users = [
   {
     name: "adam allgood",
     email: "allgoodadam@gmail.com",
+    password: "12345",
     interval: 10,
     ideas: [
       {
