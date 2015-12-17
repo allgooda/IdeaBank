@@ -5,6 +5,7 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
+var nodemailer   = require('nodemailer');
 
 var env      = require('./config/environment'),
     mongoose = require('./config/database'),
@@ -18,6 +19,25 @@ app.set('view engine', 'jade');
 app.set('title', env.TITLE);
 app.set('safe-title', env.SAFE_TITLE);
 app.set('secret-key', env.SECRET_KEY);
+
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'allgoodadam@gmail.com',
+        pass: 'romyro288'
+    }
+}, {
+    // default values for sendMail method
+    from: 'sender@address',
+    headers: {
+        'My-Awesome-Header': '123'
+    }
+});
+  transporter.sendMail({
+      to: 'allgoodadam@gmail.com',
+      subject: 'hello',
+      text: 'hello world!'
+});
 
 
 app.locals.title = app.get('title');
