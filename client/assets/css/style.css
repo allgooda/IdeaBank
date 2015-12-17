@@ -3,17 +3,24 @@
 }
 */
 nav {
-  background: rgba(36, 13, 190, 0.94);
+  background: rgba(36, 13, 190, 0.7);
 }
 .section {
-  background: rgba(36, 13, 190, 0.94);
+  background: rgba(36, 13, 190, 0.7);
 }
 #submitButton {
   text-align: center;
 }
 
-#outerBox {
-  background-color: grey;
+#description {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(36, 13, 190, 0.99);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 125px;
+  position: relative;
+  z-index: 4000;
 }
 
 #textAreaFont {

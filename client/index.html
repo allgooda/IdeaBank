@@ -7,7 +7,8 @@
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-
+    <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <link href="/assets/css/style.css" rel="stylesheet">
 
@@ -31,11 +32,32 @@
   </div>
 </nav>
 
+
+<div class="parallax-container">
+  <div class="parallax"><img src="http://www.photos-public-domain.com/wp-content/uploads/2012/05/ivory-off-white-paper-texture.jpg">
+    <h4 id="description">HELLO AND WELCOME TO THE IDEA BANK. PLEASE SUBMIT AN IDEA BELOW AND
+    WE WILL EMAIL YOU ALL OF YOUR STORED IDEAS OVER AN INTERVAL OF YOUR CHOOSING.</h4>
+  </div>
+</div>
+<div class="section">
+  <div class="row container">
+    <h3 class="header">An Idea Goes Below</h3>
+    <form ng-controller="IdeasController as vm" ng-submit="vm.submitIdea()">
+    <div class="row">
+      <div class="input-field col s6" id="box">
+        <input value="Idea..." id="idea" type="text" class="validate" ng-model='vm.newIdea.content'>
+        <input id="submitButton" type="submit">
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><img src="http://cdn3.lomography.com/09/aafd16fbc31b78af1822a4e08959bc22bf4943/1216x679x2.jpg?auth=224d59cb9e944b00ad5bb97324aa1e598b83d29f"></div>
+</div>
+
+
 <div ui-view></div>
-
-
-
-
 
 
   <script src="/js/ideabank.module.js"></script>

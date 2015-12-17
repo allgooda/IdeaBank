@@ -20,24 +20,26 @@ app.set('title', env.TITLE);
 app.set('safe-title', env.SAFE_TITLE);
 app.set('secret-key', env.SECRET_KEY);
 
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'allgoodadam@gmail.com',
-        pass: 'romyro288'
-    }
-}, {
-    // default values for sendMail method
-    from: 'sender@address',
-    headers: {
-        'My-Awesome-Header': '123'
-    }
-});
-  transporter.sendMail({
-      to: 'allgoodadam@gmail.com',
-      subject: 'hello',
-      text: 'hello world!'
-});
+
+// setInterval(function(){console.log("Hello")},3000);
+// var transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: 'allgoodadam@gmail.com',
+//         pass: 'romyro288'
+//     }
+// }, {
+//     // default values for sendMail method
+//     from: 'sender@address',
+//     headers: {
+//         'My-Awesome-Header': '123'
+//     }
+// });
+// transporter.sendMail({
+//       to: 'allgoodadam@gmail.com',
+//       subject: 'hello',
+//       text: 'hello world!'
+// });
 
 
 app.locals.title = app.get('title');
