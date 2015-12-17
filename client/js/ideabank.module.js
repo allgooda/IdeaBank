@@ -10,9 +10,9 @@
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
-      .state('login', {
-        url: '/login',
-        templateUrl: 'login.html'
+      .state('profile', {
+        url: '/profile',
+        templateUrl: 'profile.html'
       })
 
     $stateProvider
