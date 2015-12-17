@@ -12,7 +12,8 @@ var userSchema = new mongoose.Schema({
   name:     String,
   email:    String,
   interval: Number,
-  ideas:   [ideaSchema]
+  ideas:   [ideaSchema],
+  pastIdeas: Array
 });
 
 userSchema.plugin(require('mongoose-bcrypt'));

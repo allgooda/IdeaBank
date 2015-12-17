@@ -1,3 +1,5 @@
+//do no need this file...
+
 var jwt  = require('jsonwebtoken'),
     User = require('../models/user');
 
@@ -11,6 +13,7 @@ module.exports = function(app, errorHandler) {
     // validations
     checkForToken,
     validateToken,
+    // loadCurrentUser
 
     // authorizing the resource is not necessary, since this route
     // is always for the current user!
@@ -99,5 +102,12 @@ module.exports = function(app, errorHandler) {
       }
     });
   }
+
+  // function loadCurrentUser(req, res, next) {
+  //   User.findOne({email: req.decoded.email}, function (err, user) {
+  //     req.user = user;
+  //     next();
+  //   });
+  // }
 
 };

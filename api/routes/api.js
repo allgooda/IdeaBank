@@ -15,8 +15,14 @@ router.get('/users', usersController.index);
 // router.post('/users', usersController.create);
 router.get('/users/:id', usersController.show);
 
+router.put('/users', usersController.sendEmails)
+
 router.get('/ideas',  ideasController.index);
 router.post('/ideas', checkForToken, validateToken, loadCurrentUser, ideasController.create)
+
+router.get('/profile', checkForToken, validateToken, loadCurrentUser, function(req, res) {
+  res.json(req.user);
+})
 
 function checkForToken(req, res, next) {
   console.log("CHECKING", req.body)
