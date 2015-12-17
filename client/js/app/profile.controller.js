@@ -3,7 +3,7 @@
 
   angular
     .module('ideabank')
-    .controller('ProfileController');
+    .controller('ProfileController', ProfileController);
 
   ProfileController.$inject = ['$http'];
 
@@ -12,13 +12,14 @@
 
     vm.profileInfo = {};
 
-    vm.getProfile = getProfile
+    vm.getProfile = getProfile;
 
     function getProfile() {
       $http
         .get("http://localhost:3000/profile", vm.profileInfo)
         .then(function (response) {
-          console.log(response);
+          vm.profileInfo = response.data.ideas;
+          console.log(vm.profileInfo);
         });
     }
   }

@@ -87,6 +87,16 @@
   </div>
 </div>
 
+
+<form ng-controller="ProfileController as vm">
+  <div class="row">
+    <div class="input-field col s6" id="box">
+      <button ng-click="vm.getProfile()">Profile</button>
+        <h4 ng-repeat="ideas in vm.profileInfo">{{ideas.content}}</h4>
+    </div>
+  </div>
+</form>
+
 <div ui-view>
 
 </div>
@@ -94,6 +104,7 @@
 
   <script src="/js/ideabank.module.js"></script>
   <script src="/js/app/main.controller.js"></script>
+  <script src="/js/app/profile.controller.js"></script>
   <script src="/js/app/token.service.js"></script>
   <script src="/js/app/ideas.controller.js"></script>
   <script src="/js/app/tokensigning.service.js"></script>
