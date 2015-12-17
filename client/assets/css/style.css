@@ -1,22 +1,28 @@
-body {
+/*body {
   background: url(https://moodle.unitec.ac.nz/pluginfile.php/281368/mod_page/content/5/topography1.jpeg);
 }
-
+*/
 nav {
-  background: black;
+  background: rgba(36, 13, 190, 0.94);
 }
-
-.row {
-  background: grey;
-  margin-top: 100px;
-  height: 250px;
+.section {
+  background: rgba(36, 13, 190, 0.94);
 }
-
-#box {
-  margin: 0px auto;
-  width: 300px;
-}
-
-#idea {
+#submitButton {
   text-align: center;
 }
+
+#outerBox {
+  background-color: grey;
+}
+
+#textAreaFont {
+  font-size: 22px;
+  color: red;
+}
+
+.parallax-container {
+      height: 450px;
+    }
+
+

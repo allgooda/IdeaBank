@@ -1,10 +1,20 @@
 
-
-<form ng-controller="IdeasController as vm" ng-submit="vm.submitIdea()">
-  <div class="row">
-    <div class="input-field col s6" id="box">
-      <input value="Idea..." id="idea" type="text" class="validate" ng-model='vm.newIdea.content'>
-      <input type="submit">
+<div class="parallax-container">
+  <div class="parallax"><img src="https://moodle.unitec.ac.nz/pluginfile.php/281368/mod_page/content/5/topography1.jpeg"></div>
+</div>
+<div class="section">
+  <div class="row container">
+    <h3 class="header">An Idea Goes Below</h3>
+    <form ng-controller="IdeasController as vm" ng-submit="vm.submitIdea()">
+    <div class="row">
+      <div class="input-field col s6" id="box">
+        <input value="Idea..." id="idea" type="text" class="validate" ng-model='vm.newIdea.content'>
+        <input id="submitButton" type="submit">
+      </div>
     </div>
+    </form>
   </div>
-</form>
+</div>
+<div class="parallax-container">
+  <div class="parallax"><img src="http://cdn3.lomography.com/09/aafd16fbc31b78af1822a4e08959bc22bf4943/1216x679x2.jpg?auth=224d59cb9e944b00ad5bb97324aa1e598b83d29f"></div>
+</div>
