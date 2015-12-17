@@ -3,22 +3,37 @@
 }
 */
 nav {
-  background: rgba(36, 13, 190, 0.7);
+  background: rgba(6, 36, 95, .9);
 }
 .section {
-  background: rgba(36, 13, 190, 0.7);
+  background: rgba(6, 36, 95, .9);
+}
+
+.header {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.brand-logo, .dropdown-button {
+  color: rgba(80, 93, 98, 0.41);
+  font-family: 'Montserrat', sans-serif;
 }
 #submitButton {
   text-align: center;
 }
 
+#summary {
+  width: 600px;
+  margin: 0px auto;
+}
+
 #description {
+  line-height: 40px;
+  font-size: 25px;
   font-family: 'Montserrat', sans-serif;
-  color: rgba(36, 13, 190, 0.99);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px white;
+  color: navyblue;
   font-weight: bold;
   text-align: center;
-  margin-top: 125px;
+  margin-top: 110px;
   position: relative;
   z-index: 4000;
 }
@@ -30,6 +45,6 @@ nav {
 
 .parallax-container {
       height: 450px;
-    }
+}
 
 

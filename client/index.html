@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <link href="/assets/css/style.css" rel="stylesheet">
     <script src="/assets/js/app.js"></script>
@@ -34,14 +35,16 @@
 
 
 <div class="parallax-container">
-  <div class="parallax"><img src="http://www.photos-public-domain.com/wp-content/uploads/2012/05/ivory-off-white-paper-texture.jpg">
-    <h4 id="description">HELLO AND WELCOME TO THE IDEA BANK. PLEASE SUBMIT AN IDEA BELOW AND
-    WE WILL EMAIL YOU ALL OF YOUR STORED IDEAS OVER AN INTERVAL OF YOUR CHOOSING.</h4>
+  <div class="parallax"><img src="http://orig11.deviantart.net/bd31/f/2013/130/d/e/graph_paper_for_retina_ipad__noteshelf_goodnotes__by_kostroman-d64qu6k.jpg">
+    <div id="summary">
+      <h4 id="description">Have any good ideas? <br> Ill hold them for you... <br>just in case. <br> You can have
+      them back whenever you want. <br>I promise...</h4>
+    </div>
   </div>
 </div>
 <div class="section">
   <div class="row container">
-    <h3 class="header">An Idea Goes Below</h3>
+    <h3 class="header">Put your idea in my bank!</h3>
     <form ng-controller="IdeasController as vm" ng-submit="vm.submitIdea()">
     <div class="row">
       <div class="input-field col s6" id="box">
