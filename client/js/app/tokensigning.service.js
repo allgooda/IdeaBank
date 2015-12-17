@@ -32,7 +32,8 @@
           response.status == 401 ||
           response.status == 403) {
         tokenService.clear();
-        $location.path('/login');
+        $('#modal1').openModal();
+        // $location.path('/login');
       }
 
       // return the errors from the server as a promise

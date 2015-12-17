@@ -1,25 +1,7 @@
-<form id="user" class="pure-form center" ng-submit="vm.createUser()">
-  <fieldset class="pure-group center">
-    <input type="text"     ng-model="vm.user.name"     name="name" class="name" placeholder="Terry Winters">
-    <input type="email"    ng-model="vm.user.email"    name="email" class="email" placeholder="user@domain.com">
-    <input ng-model="vm.user.interval"    name="interval" class="email" placeholder="1 day...">
-    <input type="password" ng-model="vm.user.password" name="password" class="password" placeholder="secretpassword">
-    <button type="submit" class="pure-button pure-button-primary">Submit</button>
-  </fieldset>
-</form>
 
 
-<!--
-<h4>Log In User</h4>
-<form id="token" class="pure-form center" ng-submit="vm.logInUser()">
-  <fieldset class="pure-group center">
-    <input type="email" name="email" class="email" placeholder="user@domain.com" ng-model="vm.auth.email">
-    <input type="password" name="password" class="password" placeholder="secretpassword" ng-model="vm.auth.password">
-    <button type="submit" ng-hide="vm.auth.isLoggedIn" class="btn btn-primary">Login</button>
-    <button type="button" ng-show="vm.auth.isLoggedIn" ng-click="vm.auth.logOut()" class="btn btn-danger">Log Out</button>
-  </fieldset>
-  </fieldset>
-</form>
+
+
 
 <pre id="success">{{ vm.successMessage }}</pre>
-<pre id="failure">{{ vm.failureMessage }}</pre> -->
+<pre id="failure">{{ vm.failureMessage }}</pre>

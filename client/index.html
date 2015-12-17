@@ -11,7 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
     <link href="/assets/css/style.css" rel="stylesheet">
-
+    <script src="/assets/js/app.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   </head>
@@ -56,8 +56,37 @@
   <div class="parallax"><img src="http://cdn3.lomography.com/09/aafd16fbc31b78af1822a4e08959bc22bf4943/1216x679x2.jpg?auth=224d59cb9e944b00ad5bb97324aa1e598b83d29f"></div>
 </div>
 
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <form id="user" class="pure-form center" ng-submit="vm.createUser()">
+      <fieldset class="pure-group center">
+        <input type="text"     ng-model="vm.user.name"     name="name" class="name" placeholder="Terry Winters">
+        <input type="email"    ng-model="vm.user.email"    name="email" class="email" placeholder="user@domain.com">
+        <input ng-model="vm.user.interval"    name="interval" class="email" placeholder="1 day...">
+        <input type="password" ng-model="vm.user.password" name="password" class="password" placeholder="secretpassword">
+        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+      </fieldset>
+    </form>
+  </div>
 
-<div ui-view></div>
+  <h4>Log In User</h4>
+    <form id="token" class="pure-form center" ng-submit="vm.logInUser()">
+      <fieldset class="pure-group center">
+        <input type="email" name="email" class="email" placeholder="user@domain.com" ng-model="vm.auth.email">
+        <input type="password" name="password" class="password" placeholder="secretpassword" ng-model="vm.auth.password">
+        <button type="submit" ng-hide="vm.auth.isLoggedIn" class="btn btn-primary">Login</button>
+        <button type="button" ng-show="vm.auth.isLoggedIn" ng-click="vm.auth.logOut()" class="btn btn-danger">Log Out</button>
+      </fieldset>
+    </form>
+  <div class="modal-footer">
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+
+<div ui-view>
+
+</div>
 
 
   <script src="/js/ideabank.module.js"></script>
@@ -68,7 +97,7 @@
   <script src="/js/app/angular.config.js"></script>
   <script src="/js/app/user.dataservice.js"></script>
   <script src="/js/app/auth.service.js"></script>
-  <script src="/assets/js/app.js"></script>
+
   <script type="text/javascript">
 
   <!-- App scripts -->
