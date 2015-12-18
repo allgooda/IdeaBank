@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("ideabank", ['ui.router'])
+    .module("ideabank", ['ui.router'], ['chart.js'])
     .config(router);
 
   function router($stateProvider, $urlRouterProvider) {
