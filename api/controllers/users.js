@@ -15,7 +15,7 @@ var emailUser = function(ideas) {
       service: 'gmail',
       auth: {
           user: 'allgoodadam@gmail.com',
-          pass: 'romyro288'
+          pass: 'rfldjslfkd'
       }
   }, {
       // default values for sendMail method
@@ -31,7 +31,7 @@ var emailUser = function(ideas) {
   });
 }
 
-// var myVar = setInterval(function() { sendEmails() }, 10000);
+var myVar = setInterval(function() { sendEmails() }, 10000);
 
 var sendEmails = function(req, res, next) {
   User.find({}, function(error, users) {

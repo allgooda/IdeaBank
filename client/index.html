@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html >
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Idea Bank</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
@@ -49,7 +49,7 @@
 <!-- MODAL -->
 <div id="modal1" class="modal">
   <div class="modal-content">
-    <h4>Modal Header</h4>
+    <h4>You want to submit an Idea? <br> Create an Account or login please.</h4>
     <form id="user" class="pure-form center" ng-submit="vm.createUser()">
       <fieldset class="pure-group center">
         <input type="text"     ng-model="vm.user.name"     name="name" class="name" placeholder="Terry Winters">
@@ -68,8 +68,8 @@
         <input type="password" name="password" class="password" placeholder="secretpassword" ng-model="vm.auth.password">
         <button type="submit" ng-hide="vm.auth.isLoggedIn" class="btn btn-primary">Login</button>
         <button type="button" ng-show="vm.auth.isLoggedIn" ng-click="vm.auth.logOut()" class="btn btn-danger">Log Out</button>
-        <pre id="success">{{ vm.successMessage }}</pre>
-        <pre id="failure">{{ vm.failureMessage }}</pre>
+       <!--  <pre id="success">{{ vm.successMessage }}</pre>
+        <pre id="failure">{{ vm.failureMessage }}</pre> -->
       </fieldset>
     </form>
   <div class="modal-footer">
