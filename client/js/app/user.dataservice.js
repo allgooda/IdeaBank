@@ -36,6 +36,7 @@
       });
     }
 
+
     function clear() {
       $log.debug("Clearing user.");
 

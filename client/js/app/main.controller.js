@@ -13,16 +13,22 @@
     vm.auth = authService;
     vm.user = userDataService;
 
+    // vm.loggedIn = false;
+
     vm.successMessage = "Present all of the current user's data here.";
     vm.failureMessage = "Present any error messages here.";
 
+    vm.showModal = function() {
+      $('#modal1').openModal();
+    }
+
     vm.createUser = function() {
+      console.log("hello");
       var pr = vm.user.create();
 
       pr.then(
         function(data, status, headers, config) {
           $log.log("SUCCESS", data);
-
           vm.successMessage = angular.toJson(data.data);
           vm.failureMessage = "Present any error messages here.";
           vm.user.clear();
@@ -41,7 +47,8 @@
 
       .then(function(data) {
         $log.debug("Success:", data)
-
+        vm.loggedIn = true;
+        $('#modal1').closeModal();
         return vm.user.currentUserData();
       })
 
