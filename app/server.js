@@ -20,10 +20,6 @@ app.set('title', env.TITLE);
 app.set('safe-title', env.SAFE_TITLE);
 app.set('secret-key', env.SECRET_KEY);
 
-
-
-
-
 app.locals.title = app.get('title');
 
 
@@ -41,7 +37,6 @@ app.use(function(req, res, next) {
 
 // Logging layer.
 app.use(logger('dev'));
-
 // Helper layer (parses the requests, and adds further data).
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
