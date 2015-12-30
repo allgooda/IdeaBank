@@ -7,9 +7,9 @@ var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
 var nodemailer   = require('nodemailer');
 
-var env      = require('./config/environment'),
-    mongoose = require('./config/database'),
-    routes   = require('./routes/api');
+var env      = require('./app/config/environment'),
+    mongoose = require('./app/config/database'),
+    routes   = require('./app/routes/api');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 var app = express();
@@ -82,13 +82,13 @@ app.use(['/api/users', '/api/token'], function(req, res, next) {
 app.use('/api', bodyParser.json());
 
 // User resource route (POST /users)
-require('./routes/userRoute')(app, errorHandler);
+require('./app/routes/userRoute')(app, errorHandler);
 
 // Token resource route (POST /token)
-require('./routes/tokenRoute')(app, errorHandler);
+require('./app/routes/tokenRoute')(app, errorHandler);
 
 // Authorized resource route (GET /me)
-require('./routes/meRoute')(app, errorHandler);
+require('./app/routes/meRoute')(app, errorHandler);
 
 app.use('/', routes);
 

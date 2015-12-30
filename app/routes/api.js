@@ -15,7 +15,7 @@ router.get('/users', usersController.index);
 // router.post('/users', usersController.create);
 router.get('/users/:id', usersController.show);
 
-router.put('/users', usersController.sendEmails)
+// router.put('/users', usersController.sendEmails);
 
 router.get('/ideas',  ideasController.index);
 router.post('/ideas', checkForToken, validateToken, loadCurrentUser, ideasController.create)
