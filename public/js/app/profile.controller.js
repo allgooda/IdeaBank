@@ -14,15 +14,18 @@
     $scope.data = [
     [65, 59, 90, 81, 56, 55, 40, 28, 48, 40, 19],
   ];
+    $scope.profileInfo = [];
 
   $scope.getProfile = getProfile;
 
     function getProfile() {
       $http
-        .get("http://localhost:3000/profile", vm.profileInfo)
+        .get("http://localhost:3000/profile", $scope.profileInfo)
         .then(function (response) {
-          $scope.profileInfo = response.data.ideas;
-          console.log(vm.profileInfo);
+          console.log(response.data);
+          console.log($scope.profileInfo);
+          // $scope.profileInfo = response.data
+
         });
     }
   }

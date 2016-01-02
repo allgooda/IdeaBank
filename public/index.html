@@ -25,9 +25,9 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">Idea Bank</a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="right hide-on-med-and-down" ng-controller="ProfileController">
         <!-- Dropdown Trigger -->
-        <li ng-if="vm.loggedIn"><a ui-sref='profile'>Profile</a></li>
+        <li ng-if="vm.loggedIn"><a ui-sref='profile' ng-click="getProfile()">Profile</a></li>
         <li><a ng-if="!vm.loggedIn" ng-click="vm.showModal()">Create or Login</a></li>
 
       </ul>

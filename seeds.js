@@ -1,7 +1,7 @@
-var mongoose = require('./config/database');
+var mongoose = require('./app/config/database');
 
-var User = require('./models/user'),
-    Idea = require('./models/idea');
+var User = require('./app/models/user'),
+    Idea = require('./app/models/idea');
 
 
 var users = [
@@ -25,7 +25,8 @@ var users = [
 
   {
     name: "evan allgood",
-    email: "allgoodadam@gmail.com",
+    email: "evan@gmail.com",
+    password: "12345",
     interval: 160000,
     ideas: [
       {
@@ -37,7 +38,28 @@ var users = [
       date: "2015-12-16T22:06:51.024Z"
       }
     ],
-    pastIdeas:[]
+    pastIdeas:[
+      {
+      content: 'A man with a hat',
+      date: "2015-01-16T22:06:51.024Z"
+      },
+      {
+      content: 'A man with a hat',
+      date: "2015-03-16T22:06:51.024Z"
+      },
+      {
+      content: 'A man with a hat',
+      date: "2015-03-16T22:06:51.024Z"
+      },
+      {
+      content: 'A man with a hat',
+      date: "2015-07-16T22:06:51.024Z"
+      },
+      {
+      content: 'A man with a hat',
+      date: "2015-07-16T22:06:51.024Z"
+      }
+    ]
   }
 ];
 
