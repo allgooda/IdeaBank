@@ -78,7 +78,8 @@
         var profileData = populateChart(response.data.pastIdeas);
         $scope.data = [];
         $scope.data.push(profileData);
-        console.log($scope.data);
+        $scope.name = response.data.name;
+        $scope.totalIdeas = response.data.pastIdeas.length;
       });
 
     function populateChart(pastIdeas) {
