@@ -40,6 +40,16 @@ nav {
   color: red;
 }
 
+#user-chart {
+  background: gray;
+  margin: 20px;
+}
+
+#radar {
+  padding: 15px;
+  margin: 15px;
+}
+
 .parallax-container {
       height: 450px;
 }
