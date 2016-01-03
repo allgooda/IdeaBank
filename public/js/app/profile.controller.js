@@ -11,18 +11,14 @@
 
     $scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
 
-  $scope.getProfile = getProfile;
-
-    function getProfile() {
-      $http
-        .get("http://localhost:3000/profile")
-        .then(function (response) {
-          var profileData = populateChart(response.data.pastIdeas);
-          $scope.data = [];
-          $scope.data.push(profileData);
-          console.log($scope.data);
-        });
-    }
+    $http
+      .get("http://localhost:3000/profile")
+      .then(function (response) {
+        var profileData = populateChart(response.data.pastIdeas);
+        $scope.data = [];
+        $scope.data.push(profileData);
+        console.log($scope.data);
+      });
 
     function populateChart(pastIdeas) {
       console.log(pastIdeas);
