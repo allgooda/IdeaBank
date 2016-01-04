@@ -10,6 +10,12 @@
   function ProfileController($http, $scope) {
 
     $scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
+    $scope.colours = [{
+    fillColor: 'rgba(47, 132, 71, 0.8)',
+    strokeColor: 'rgba(47, 132, 71, 0.8)',
+    highlightFill: 'rgba(47, 132, 71, 0.8)',
+    highlightStroke: 'rgba(47, 132, 71, 0.8)'
+    }];
 
     $scope.options =  {
 
