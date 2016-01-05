@@ -2,7 +2,7 @@ var User = require("../models/user");
 var Idea = require("../models/idea");
 var mongoose = require('mongoose');
 var nodemailer   = require('nodemailer');
-
+var env = require("../config/environment");
 
 var index = function(req, res, next) {
   User.find({}, function(error, users) {
@@ -29,7 +29,7 @@ var emailUser = function(ideas, user) {
         service: 'gmail',
         auth: {
             user: 'ideabankemail@gmail.com',
-            pass: ""
+            pass: env.GMAILPASS
         }
     }, {
         // default values for sendMail method
@@ -46,7 +46,7 @@ var emailUser = function(ideas, user) {
   }
 
 
-var myVar = setInterval(function() { sendEmails() }, 10000);
+// var myVar = setInterval(function() { sendEmails() }, 10000);
 
 var sendEmails = function(req, res, next) {
   User.find({}, function(error, users) {

@@ -1,7 +1,7 @@
 
 <h2> {{name}}...So good to see you. <br> Here is an important graph of all your ideas: </h2>
 
-<div id="user-chart">
+<div id="user-chart" ng-controller="ProfileController">
   <canvas id="radar" class="chart chart-radar"
       chart-data="data" chart-labels="labels" chart-colours="colours" chart-options="options">
   </canvas>
