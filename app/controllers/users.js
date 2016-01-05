@@ -11,19 +11,25 @@ var index = function(req, res, next) {
 };
 
 var buildHtml = function(ideas, user) {
-  var header = "<h2> Hello," + user.name + " here are your ideas: </h2><br>";
+  var header = "<h2> Hello, " + user.name + " here are your ideas: </h2>";
+  var list = "";
+  if(ideas.length > 0) {
+    for (var i = 0; i < ideas.length; i++){
+
+      list = list + "<br><h3>" + ideas[i].content + "</h3>";
+    }
+  return(header + list);
+  }
 }
 
 var emailUser = function(ideas, user) {
-  if(ideas.length > 0) {
-    for (var i = 0; i < ideas.length; i++){
-      var list = []
-    }
+    var emailContent = buildHtml(ideas, user);
+    console.log(emailContent);
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'ideabankemail@gmail.com',
-            pass:
+            pass: ""
         }
     }, {
         // default values for sendMail method
@@ -35,10 +41,10 @@ var emailUser = function(ideas, user) {
     transporter.sendMail({
       to: user.email,
       subject: 'Your Ideas!',
-      html: "<h1>" + ideas[i].content + "</h1>"
+      html: emailContent
     });
   }
-}
+
 
 var myVar = setInterval(function() { sendEmails() }, 10000);
 
@@ -69,8 +75,6 @@ var sendEmails = function(req, res, next) {
       console.log(sendRetire);
       user.save(function(err) {
         if (err) res.send(err);
-
-
         emailUser(sendRetire, user);
       });
     });
