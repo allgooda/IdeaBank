@@ -10,63 +10,72 @@ var index = function(req, res, next) {
   });
 };
 
-// var emailUser = function(ideas) {
-//   var transporter = nodemailer.createTransport({
-//       service: 'gmail',
-//       auth: {
-//           user: 'allgoodadam@gmail.com',
-//           pass: 'rfldjslfkd'
-//       }
-//   }, {
-//       // default values for sendMail method
-//       from: 'sender@address',
-//       headers: {
-//           'My-Awesome-Header': '123'
-//       }
-//   });
-//   transporter.sendMail({
-//         to: 'allgoodadam@gmail.com',
-//         subject: 'hello',
-//         text: ideas[0].content
-//   });
-// }
+var buildHtml = function(ideas, user) {
+  var header = "<h2> Hello," + user.name + " here are your ideas: </h2><br>";
+}
 
-// var myVar = setInterval(function() { sendEmails() }, 10000);
+var emailUser = function(ideas, user) {
+  if(ideas.length > 0) {
+    for (var i = 0; i < ideas.length; i++){
+      var list = []
+    }
+    var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'ideabankemail@gmail.com',
+            pass:
+        }
+    }, {
+        // default values for sendMail method
+        from: 'sender@address',
+        headers: {
+            'My-Awesome-Header': '123'
+        }
+    });
+    transporter.sendMail({
+      to: user.email,
+      subject: 'Your Ideas!',
+      html: "<h1>" + ideas[i].content + "</h1>"
+    });
+  }
+}
 
-// var sendEmails = function(req, res, next) {
-//   User.find({}, function(error, users) {
-//     users.forEach(function(user) {
-//       var sendRetire = [];
+var myVar = setInterval(function() { sendEmails() }, 10000);
 
-//       user.ideas.forEach(function(idea) {
+var sendEmails = function(req, res, next) {
+  User.find({}, function(error, users) {
+    users.forEach(function(user) {
+      var sendRetire = [];
 
-//         var seconds = Math.floor((Date.now() - idea.date.getTime()) / 1000);
+      user.ideas.forEach(function(idea) {
 
-//         if (seconds >= user.interval) {
-//           sendRetire.push(idea);
-//         }
-//         console.log(seconds);
-//       });
+        var seconds = Math.floor((Date.now() - idea.date.getTime()) / 1000);
 
-//       for (var i = 0; i < sendRetire.length; i++) {
-//         user.ideas.shift();
-//       }
+        if (seconds >= user.interval) {
+          sendRetire.push(idea);
+        }
+        console.log(seconds);
+      });
 
-//       if (sendRetire.length > 0) {
-//         sendRetire.forEach(function(pIdea) {
-//           user.pastIdeas.push(pIdea);
-//         })
-//       }
-//       console.log(sendRetire);
-//       user.save(function(err) {
-//         if (err) res.send(err);
+      for (var i = 0; i < sendRetire.length; i++) {
+        user.ideas.shift();
+      }
 
-//         // res.json({message: "Ideas in place.", send: sendRetire});
-//         emailUser(sendRetire);
-//       });
-//     });
-//   });
-// }
+      if (sendRetire.length > 0) {
+        sendRetire.forEach(function(pIdea) {
+          user.pastIdeas.push(pIdea);
+        })
+      }
+      console.log(sendRetire);
+      user.save(function(err) {
+        if (err) res.send(err);
+
+
+        emailUser(sendRetire, user);
+      });
+    });
+  });
+}
 
 var show = function(req, res, next) {
   User.findById(req.params.id, function(error, user){

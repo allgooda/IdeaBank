@@ -34,6 +34,10 @@ var users = [
       date: "2015-12-16T22:06:51.024Z"
       },
       {
+      content: "A man with a hat",
+      date: "2015-12-16T22:06:51.024Z"
+      },
+      {
       content: 'A man with a hat',
       date: "2015-12-16T22:06:51.024Z"
       }

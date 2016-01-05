@@ -14,7 +14,7 @@ var env      = require('./app/config/environment'),
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 var app = express();
 
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 app.set('title', env.TITLE);
 app.set('safe-title', env.SAFE_TITLE);
