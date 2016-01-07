@@ -11,7 +11,7 @@ var ideaSchema = new mongoose.Schema({
 var userSchema = new mongoose.Schema({
   name:     String,
   email:    String,
-  interval: Number,
+  interval: String,
   ideas:   [ideaSchema],
   pastIdeas: Array
 });

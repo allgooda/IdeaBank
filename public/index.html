@@ -40,21 +40,48 @@
     <h4>You want to submit an Idea? <br> Create an Account or login please.</h4>
     <form id="user" class="pure-form center" ng-submit="vm.createUser()">
       <fieldset class="pure-group center">
-        <input type="text"     ng-model="vm.user.name"     name="name" class="name" placeholder="Terry Winters">
-        <input type="email"    ng-model="vm.user.email"    name="email" class="email" placeholder="user@domain.com">
 
-         <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Interval</a>
+        <div class="input-field col s6">
+          <input ng-model="vm.user.name" id="last_name" type="text" class="validate">
+          <label for="last_name">Name</label>
+        </div>
 
-        <!-- Dropdown Structure -->
-        <ul id='dropdown1' class='dropdown-content'>
-          <li><a ng-model="vm.user.interval" href="#!">one</a></li>
-          <li><a ng-model="vm.user.interval" href="#!">two</a></li>
-          <li class="divider"></li>
-          <li><a ng-model="vm.user.interval" href="#!">three</a></li>
-        </ul>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <input ng-model="vm.user.email" id="email" type="email" class="validate">
+                <label for="email" data-error="wrong" data-success="right">Email</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <input ng-model="vm.user.interval" name="interval" class="email" placeholder="1 day...">
+        <!-- <form action="#">
+        <h4>Interval</h4>
+          <p>
+            <input ng-model="vm.user.interval" name="group1" type="radio" id="test1"/>
+            <label for="test1">Every day</label>
+          </p>
+          <p>
+            <input name="group1" type="radio" id="test2"/>
+            <label for="test2">Every Week</label>
+          </p>
+          <p>
+            <input name="group1" type="radio" id="test3"/>
+            <label for="test3">Every Month </label>
+          </p>
+            <p>
+              <input name="group1" type="radio" id="test4"/>
+              <label for="test4">Every Year</label>
+          </p>
+        </form> -->
 
-        <input ng-model="vm.user.interval"    name="interval" class="email" placeholder="1 day...">
-        <input type="password" ng-model="vm.user.password" name="password" class="password" placeholder="secretpassword">
+        <div class="input-field col s6">
+          <input ng-model="vm.user.password" id="last_name" type="text" class="validate">
+          <label for="last_name">Password</label>
+        </div>
+
         <button type="submit" class="pure-button pure-button-primary">Create</button>
       </fieldset>
     </form>
