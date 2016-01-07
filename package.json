@@ -1,9 +1,9 @@
 {
-  "name": "api",
+  "name": "app",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app/bin/www"
+    "start": "node ./app/bin/www"
   },
   "dependencies": {
     "angular-chart": "^0.3.2",
