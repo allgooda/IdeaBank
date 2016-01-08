@@ -60,19 +60,19 @@
         <form action="#">
         <h4>Interval</h4>
           <p>
-            <input ng-model="vm.user.interval" name="group1" type="radio" id="test1"/>
+            <input ng-model="vm.user.interval" value="everyday" name="group1" type="radio" id="test1"/>
             <label for="test1">Every day</label>
           </p>
           <p>
-            <input name="group1" type="radio" id="test2"/>
+            <input ng-model="vm.user.interval" value="everyweek" name="group1" type="radio" id="test2"/>
             <label for="test2">Every Week</label>
           </p>
           <p>
-            <input name="group1" type="radio" id="test3"/>
+            <input ng-model="vm.user.interval" value="everymonth" name="group1" type="radio" id="test3"/>
             <label for="test3">Every Month </label>
           </p>
             <p>
-              <input name="group1" type="radio" id="test4"/>
+              <input ng-model="vm.user.interval" value="everyyear" name="group1" type="radio" id="test4"/>
               <label for="test4">Every Year</label>
           </p>
           <h4> Selected: </h4>{{vm.user.interval}}
