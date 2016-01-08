@@ -1,4 +1,4 @@
-var moment = require('moment'),
+  var moment = require('moment'),
     User   = require('../models/user');
 
 module.exports = function(app, errorHandler) {
