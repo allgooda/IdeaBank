@@ -56,8 +56,8 @@
             </div>
           </form>
         </div>
-        <input ng-model="vm.user.interval" name="interval" class="email" placeholder="1 day...">
-        <!-- <form action="#">
+       <!--  <input ng-model="vm.user.interval" name="interval" class="email" placeholder="1 day..."> -->
+        <form action="#">
         <h4>Interval</h4>
           <p>
             <input ng-model="vm.user.interval" name="group1" type="radio" id="test1"/>
@@ -75,7 +75,8 @@
               <input name="group1" type="radio" id="test4"/>
               <label for="test4">Every Year</label>
           </p>
-        </form> -->
+          {{vm.user.interval}}
+        </form>
 
         <div class="input-field col s6">
           <input ng-model="vm.user.password" id="last_name" type="text" class="validate">
