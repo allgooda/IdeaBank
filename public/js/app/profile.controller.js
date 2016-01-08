@@ -79,7 +79,7 @@
 
 
     $http
-      .get("http://localhost:3000/profile")
+      .get("/profile")
       .then(function (response) {
         var profileData = populateChart(response.data.pastIdeas);
         $scope.data = [];

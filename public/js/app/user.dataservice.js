@@ -25,7 +25,7 @@
 
       return $http({
         method: "POST",
-        url:    "http://localhost:3000/api/users",
+        url:    "/api/users",
         headers: {"Content-Type": "application/json"},
         data: angular.toJson({
           name:     user.name,
@@ -50,7 +50,7 @@
       $log.debug("Retrieving current user data.");
 
       return $http({
-        url:     "http://localhost:3000/api/me",
+        url:     "/api/me",
         method:  "GET"
       });
     }
