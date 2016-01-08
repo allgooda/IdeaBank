@@ -17,7 +17,7 @@
 
     function submitIdea() {
       $http
-        .post("http://localhost:3000/ideas", vm.newIdea)
+        .post("mongodb://adamsdb:ideabank@ds039195.mongolab.com:39195/ideabank/ideas", vm.newIdea)
         .then(function (response) {
           vm.ideas.push(response.data);
           vm.newIdea = {};
