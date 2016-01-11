@@ -7,6 +7,8 @@ var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
 var nodemailer   = require('nodemailer');
 
+
+require('dotenv').load();
 var env      = require('./app/config/environment'),
     mongoose = require('./app/config/database'),
     routes   = require('./app/routes/api');

@@ -25,6 +25,7 @@ var buildHtml = function(ideas, user) {
 var emailUser = function(ideas, user) {
     var emailContent = buildHtml(ideas, user);
     console.log(emailContent);
+    console.log(env.GMAILPASS);
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
