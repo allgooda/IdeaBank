@@ -23,6 +23,7 @@ var buildHtml = function(ideas, user) {
 }
 
 var emailUser = function(ideas, user) {
+  if(ideas.length > 0) {
     var emailContent = buildHtml(ideas, user);
     console.log(emailContent);
     var transporter = nodemailer.createTransport({
@@ -43,6 +44,9 @@ var emailUser = function(ideas, user) {
       subject: 'Your Ideas!',
       html: emailContent
     });
+  } else {
+    console.log("nothing");
+  }
   }
 
 
