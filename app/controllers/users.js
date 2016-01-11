@@ -29,7 +29,7 @@ var emailUser = function(ideas, user) {
         service: 'gmail',
         auth: {
             user: 'ideabankemail@gmail.com',
-            pass: env.GMAILPASS
+            pass: process.env.GMAILPASS
         }
     }, {
         // default values for sendMail method
