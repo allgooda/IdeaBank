@@ -12,7 +12,7 @@
       name:     "",
       email:    "",
       password: "",
-      interval: "",
+      interval: 0,
       clear: clear,
       create:   create,
       currentUserData: currentUserData
@@ -43,7 +43,7 @@
       user.email    = "";
       user.name     = "";
       user.password = "";
-      user.interval = "";
+      user.interval = 0;
     }
 
     function currentUserData() {
