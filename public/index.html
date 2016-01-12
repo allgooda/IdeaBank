@@ -7,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-chart.js/0.8.8/angular-chart.css">
 
@@ -25,11 +26,18 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo">Idea Bank</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">view_module</i></a>
       <ul class="right hide-on-med-and-down">
         <!-- Dropdown Trigger -->
-        <li ng-if="vm.loggedIn"><a ui-sref='profile'>Profile</a></li>
-        <li><a ng-if="!vm.loggedIn" ng-click="vm.showModal()">Create or Login</a></li>
+        <li ng-if="vm.auth.isLoggedIn"><a ui-sref='profile'>Profile</a></li>
+        <li ng-if="vm.auth.isLoggedIn" ng-click="vm.auth.logOut()" ui-sref="home"><a>Logout</a></li>
+        <li><a ng-if="!vm.auth.isLoggedIn" ng-click="vm.showModal()">Create or Login</a></li>
+      </ul>
 
+      <ul class="side-nav" id="mobile-demo">
+        <li ng-if="vm.auth.isLoggedIn"><a ui-sref='profile'>Profile</a></li>
+        <li ng-if="vm.auth.isLoggedIn" ng-click="vm.auth.logOut()" ui-sref="home"><a>Logout</a></li>
+        <li><a ng-if="!vm.auth.isLoggedIn" ng-click="vm.showModal()">Create or Login</a></li>
       </ul>
     </div>
   </nav>
