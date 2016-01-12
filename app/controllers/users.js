@@ -50,7 +50,7 @@ var emailUser = function(ideas, user) {
   }
 
 
-var myVar = setInterval(function() { sendEmails() }, 10000);
+var myVar = setInterval(function() { sendEmails() }, 60000);
 
 var sendEmails = function(req, res, next) {
   User.find({}, function(error, users) {
