@@ -16,11 +16,11 @@
 <div class="section">
   <div class="row container">
     <h3 class="header">Put your idea in my bank!</h3>
-    <form ng-controller="IdeasController as vm" ng-submit="vm.submitIdea()">
+    <form ng-controller="IdeasController as vm">
     <div class="row">
       <div class="input-field col s6" id="box">
         <input value="Idea..." id="idea" type="text" class="validate" ng-model='vm.newIdea.content'>
-        <input id="submitButton" type="submit">
+          <a type="submit" class="waves-effect waves-light btn-large" ng-click="vm.submitIdea()"><i class="material-icons left">queue</i>Submit Idea</a>
       </div>
     </div>
     </form>
