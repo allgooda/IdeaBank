@@ -1,11 +1,10 @@
-
-<h2> {{name}}...So good to see you. <br> Here is an important graph of all your ideas: </h2>
-
-<div id="user-chart" ng-controller="ProfileController">
+<br>
+<div id="chartdiv" class="card-panel hoverable" class="z-depth-2" id="user-chart" ng-controller="ProfileController">
+  <p class="card-panel teal lighten-2" class="flow-text"> {{name}}...So good to see you. You've stored {{totalIdeas}} ideas! Here is an important graph illustrating the idea output of your brain:  </p>
   <canvas id="radar" class="chart chart-radar"
       chart-data="data" chart-labels="labels" chart-colours="colours" chart-options="options">
   </canvas>
 </div>
 
-<h3> Looks like you've stored {{totalIdeas}} ideas!
+
 

@@ -11,10 +11,10 @@
 
     $scope.labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
     $scope.colours = [{
-    fillColor: 'rgba(47, 132, 71, 0.8)',
-    strokeColor: 'rgba(47, 132, 71, 0.8)',
-    highlightFill: 'rgba(47, 132, 71, 0.8)',
-    highlightStroke: 'rgba(47, 132, 71, 0.8)'
+    fillColor: 'rgba(0, 0, 0, .5)',
+    strokeColor: 'rgba(0 , 0, 0, .9)',
+    highlightFill: 'rgba(6, 36, 95, .9)',
+    highlightStroke: 'rgba(6, 36, 95, .1))'
     }];
 
     $scope.options =  {
@@ -34,11 +34,17 @@
       // Boolean - Whether the scale should begin at zero
       scaleBeginAtZero : true,
 
+      scaleLineColor : "#999",
+
       //String - Colour of the angle line
-      angleLineColor : 'rgba(0,0,0,.9)',
+      angleLineColor : 'rgba(255,230,250,.9)',
+
+      scaleBackdropColor : "rgba(255,255,255,0.75)",
+
+      scaleFontColor : "#666",
 
       //Number - Pixel width of the angle line
-      angleLineWidth : 1,
+      angleLineWidth : 3,
 
       //String - Point label font declaration
       pointLabelFontFamily : '"Arial"',
@@ -50,7 +56,7 @@
       pointLabelFontSize : 18,
 
       //String - Point label font colour
-      pointLabelFontColor : 'black',
+      pointLabelFontColor : 'white',
 
       //Boolean - Whether to show a dot for each point
       pointDot : true,
@@ -137,3 +143,9 @@
 
   }
 })();
+
+
+
+
+
+

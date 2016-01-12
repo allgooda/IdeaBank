@@ -2,6 +2,15 @@
 nav {
   background: rgba(6, 36, 95, .9);
 }
+
+p {
+  font-size: 20px;
+}
+
+#chartdiv {
+  background-color: #0B353F;
+}
+
 .section {
   background: rgba(6, 36, 95, .9);
 }
