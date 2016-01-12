@@ -27,11 +27,6 @@ p {
   text-align: center;
 }
 
-#summary {
-  width: 600px;
-  margin: 0px auto;
-}
-
 #description {
   line-height: 40px;
   font-size: 25px;
