@@ -13,6 +13,7 @@ p {
 
 .section {
   background: rgba(6, 36, 95, .9);
+  height: 300px;
 }
 
 .header {

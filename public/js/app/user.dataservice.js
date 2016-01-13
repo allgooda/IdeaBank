@@ -15,7 +15,8 @@
       interval: 0,
       clear: clear,
       create:   create,
-      currentUserData: currentUserData
+      currentUserData: currentUserData,
+      currentName: currentUserData()
     };
 
     return user;

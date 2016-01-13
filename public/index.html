@@ -28,7 +28,6 @@
       <a href="#!" class="brand-logo">Idea Bank</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">view_module</i></a>
       <ul class="right hide-on-med-and-down">
-        <!-- Dropdown Trigger -->
         <li ng-if="vm.auth.isLoggedIn"><a ui-sref='profile'>Profile</a></li>
         <li ng-if="vm.auth.isLoggedIn" ng-click="vm.auth.logOut()" ui-sref="home"><a>Logout</a></li>
         <li><a ng-if="!vm.auth.isLoggedIn" ng-click="vm.showModal()">Create or Login</a></li>
