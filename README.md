@@ -92,3 +92,18 @@ Moqups | Javascript
 Method|Parameters|Description|
 -------------|------|-----------|
 `show`|`/users/:id`|a user can see a specific user by id.
+
+###User Model
+
+    var ideaSchema = new mongoose.Schema({
+    content: String,
+    date: {type: Date, default: Date.now}
+    });
+
+    var userSchema = new mongoose.Schema({
+    name:     String,
+    email:    String,
+    interval: Number,
+    ideas:   [ideaSchema],
+    pastIdeas: Array
+    });
