@@ -8,9 +8,11 @@ Have you ever had a good idea for something but forgot it because you couldnt co
 
 ###Installation and Use
 
-Idea Bank is compatible with any browser and mobile device. Simply click ![HERE](https://evening-fjord-4234.herokuapp.com/) to visit the site.
+Idea Bank is compatible with any browser and mobile device. Simply click [HERE](https://evening-fjord-4234.herokuapp.com/) to visit the site.
 
 Click the top right to create an account and choose a time interval. After, you will be able to login and start submitting ideas.
+
+Once you have accumulated some ideas, visit your profile page to see an interactive chart showing trends in your ideas base on the months of the year.
     
 ###Behind the Scenes
 
