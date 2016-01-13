@@ -34,4 +34,47 @@ Visit my [trello.com](https://trello.com/b/V0gjWrMy/ideabank) to see how I organ
 - [x] As a user I should be able to create an account
 
 ####Current User Stories
-- [] As a user my name and picture should be displayed when I log in.
+- [ ] As a user my name and picture should be displayed when I log in.
+
+### Installations required
+
+#### Package dependancies:
+- Below is a snippet of our package.json so you can npm install all package dependancies.
+
+```
+   "dependencies": {
+    "angular-chart": "^0.3.2",
+    "angular-chart.js": "^0.8.8",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "dotenv": "^1.2.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "0.4.0",
+    "lodash": "^3.10.1",
+    "moment": "^2.10.6",
+    "mongoose": "4.3.1",
+    "mongoose-bcrypt": "^1.2.3",
+    "morgan": "~1.6.1",
+    "nodemailer": "^1.11.0",
+    "serve-favicon": "~2.3.0"
+  }
+```
+
+####Angular Chart.js
+
+Angular Chart.js is an angular compatible version of Chart.js which was used to create graphs of the user ideas. I installed by using npm install.
+
+    npm install angular-chartjs --save
+    
+Visit https://www.npmjs.com/package/angular-chartjs for more information.
+
+####NodeMailer
+
+Nodemailer was the technology I user in order to send emails from my own email account to the users. To install:
+
+    npm install nodemailer
+    
+Visit https://github.com/nodemailer/nodemailer for more documentation.
+
