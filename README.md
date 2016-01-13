@@ -85,4 +85,4 @@ Design | Development | Deployment/Database | Organization
 Materialize | MEAN Stack | Heroku | Trello
 HTML | Chart.js | Mongolab
 CSS | Node Mailer |
-Moqups |
+Moqups | Javascript
