@@ -86,3 +86,9 @@ Materialize | MEAN Stack | Heroku | Trello
 HTML | Chart.js | Mongolab
 CSS | Node Mailer |
 Moqups | Javascript
+
+### API Documentation:
+
+Method|Parameters|Description|
+-------------|------|-----------|
+`show`|`/users/:id`|a user can see a specific user by id.
