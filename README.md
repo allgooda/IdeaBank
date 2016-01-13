@@ -78,9 +78,10 @@ Nodemailer was the technology I user in order to send emails from my own email a
     
 Visit https://github.com/nodemailer/nodemailer for more documentation.
 
+###Technologies Used
 
 Design | Development | Deployment/Database | Organization
----- | --- | ---
+---- | --- | --- | ---
 Materialize | MEAN Stack | Heroku | Trello
 HTML | Chart.js | Mongolab
 CSS | Node Mailer |
