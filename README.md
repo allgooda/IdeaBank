@@ -19,3 +19,19 @@ Once you have accumulated some ideas, visit your profile page to see an interact
 Visit my [trello.com](https://trello.com/b/V0gjWrMy/ideabank) to see how I organized, planned my goals, milestones and issues.
 
 ###Minimum Viable Product
+
+####Completed User Stories
+
+[x]As a user I should be able to Log in to my account.
+[x]As a user I should have a profile page which shows how many ideas I've input.
+[x]As a user I should be able to set a time interval for when i receive my ideas via email
+[x]As a user the IdeaBank should email me my ideas that I submitted within the previous time interval
+[x]As a user my ideas should be linked to my account
+[x]As a user I should have a log out button in order to log out of my account 
+[x]As a user my profile page should have a graph which shows trends in my ideas.
+[x]As user the profile page should display my name
+[x]As a user I should be able to submit thoughts and ideas I have throughout the day.
+[x]As a user I should be able to create an account
+
+####Current User Stories
+[]As a user my name and picture should be displayed when I log in.
